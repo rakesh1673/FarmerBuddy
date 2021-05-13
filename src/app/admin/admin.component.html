@@ -1,0 +1,19 @@
+<!-- <p>admin works!</p> -->
+<app-admin-navbar></app-admin-navbar>
+<button class="btn btn-light" (click)="showSideNav()"><i class="fas fa-lg fa-bars"></i></button>
+
+<ng-template #content>
+  <h2 style="color: white">Farmer Buddy</h2>
+  <span style="color: white; padding: 7px;" class="badge rounded-pill bg-danger">Admin</span>
+  <br><br>
+  <nav class="nav d-flex justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item" *ngFor="let link of links">
+        <button type="button" mdbBtn color="warning" mdbWavesEffect block="true" class="nav-link px-3 mb-3"
+          routerLink="/admin/{{link.link}}" (click)="closeSideNav()">{{ link.name }}</button>
+      </li>
+    </ul>
+  </nav>
+</ng-template>
+
+<router-outlet></router-outlet>

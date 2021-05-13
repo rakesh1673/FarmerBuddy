@@ -1,0 +1,91 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Farmer Buddy</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="/oshop" mdbWavesEffect>Oshop<span
+            class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="/oshop/products/all-products" mdbWavesEffect>Products</a>
+      </li>
+
+    </ul>
+    <!-- Links -->
+
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <div>
+          <a class="nav-link" href="javascript:;;" [routerLink]="['/oshop/products/favourite-products']">
+            <i class="fa fa-heart mr-2">
+              <span class="ml-1 mt-2 badge rounded-pill badge-notification bg-danger">
+                {{ productService.getLocalFavouriteProducts().length }}
+              </span>
+            </i>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div>
+          <a class="nav-link" href="javascript:;;" [routerLink]="['/oshop/products/cart-items']">
+            <i class="fa fa-shopping-cart mr-2">
+              <span class="ml-1 mt-2 badge rounded-pill badge-notification bg-danger">
+                {{ productService.getLocalCartProducts().length }}
+              </span>
+            </i>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="authService.isLoggedIn$ | async">
+        <a class="nav-link" routerLink='/oshop/users'>
+          <i class="fa fa-user mr-1"> {{ 'My Account' }}</i>
+        </a>
+      </li>
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light">
+          <i class="fa fa-globe"> </i><span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" href="javascript:;;" (click)="setLang(lang.langCode)"
+            *ngFor="let lang of languageList">
+            <i class="fa fa-flag-o mr-2"></i>
+            {{ lang.language }} ({{ lang.langCode }})</a>
+        </div>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link">
+          <div class="btn-group mr-2" mdbDropdown>
+            <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="divider dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </a>
+      </li> -->
+      <li class="nav-item" *ngIf="authService.isLoggedOut$ | async">
+        <a class="nav-link" [routerLink]="['./login']">
+          <i class="fas fa-lg fa-user-circle mr-2"> {{ 'Sign in' }}</i>
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="authService.isLoggedIn$ | async">
+        <a class="nav-link" (click)="logout()">
+          <i class="fas fa-lg fa-user-circle"> {{ 'logout' }}</i>
+        </a>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

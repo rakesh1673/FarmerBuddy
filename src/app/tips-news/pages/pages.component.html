@@ -1,0 +1,17 @@
+<div class="m-3">
+  <div class="card-columns">
+    <mdb-card *ngFor="let post of postList">
+      <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+        <iframe *ngIf="post.videoLink" class="embed-responsive-item" [src]="'post.videoLink'" allowfullscreen></iframe>
+        <mdb-card-img *ngIf="post.imgLink" src="{{post.imgLink}}" class="card-img-top">
+        </mdb-card-img>
+      </div>
+      <mdb-card-body class="text-center">
+        <mdb-card-title>
+          <h4>{{ post.title }}</h4>
+        </mdb-card-title>
+        <mdb-card-text>{{ post.content }}</mdb-card-text>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+</div>

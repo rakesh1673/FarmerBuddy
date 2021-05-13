@@ -1,0 +1,28 @@
+<!-- <p>edit-post works!</p> -->
+<h2 mat-dialog-title>Edit</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <input class="form-control" placeholder="Title" [(ngModel)]="data.title">
+  </mat-form-field>&nbsp;
+  <mat-form-field>
+    <select class="form-control" placeholder="Select Menu" [(ngModel)]="data.menu_id">
+      <option *ngFor="let menu of data.menus" [value]="menu.id">
+        {{menu.title}}
+      </option>
+    </select>
+  </mat-form-field>&nbsp;
+  <mat-form-field>
+    <input class="form-control" placeholder="image link" [(ngModel)]="data.imgLink">
+  </mat-form-field>&nbsp;
+  <mat-form-field>
+    <input class="form-control" placeholder="video link" [(ngModel)]="data.videoLink">
+  </mat-form-field>&nbsp;
+  <mat-form-field>
+    <textarea class="form-control" placeholder="content" [(ngModel)]="data.content"></textarea>
+  </mat-form-field>&nbsp;
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="btn btn-danger" [mat-dialog-close]="data">Yes</button>&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-dark" mat-dialog-close="false">Cancel</button>
+</mat-dialog-actions>

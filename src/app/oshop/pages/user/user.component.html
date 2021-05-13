@@ -1,0 +1,23 @@
+<!-- <p>user works!</p> -->
+<br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-lg-3">
+      <ul class="list-group">
+        <li class="list-group-item hoverable">
+          <a [routerLink]="['/oshop/users']">Your Profile</a>
+        </li>
+        <li class="list-group-item hoverable">
+          <a [routerLink]="['/oshop/users', { outlets: { profileOutlet: ['favourite-products']}}]">Your Wishlist</a>
+        </li>
+        <li class="list-group-item hoverable">
+          <a [routerLink]="['/oshop/users', { outlets: { profileOutlet: ['cart-items']}}]">Your Cart</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-8 col-lg-9">
+      <router-outlet name="profileOutlet"></router-outlet>
+    </div>
+  </div>
+</div>

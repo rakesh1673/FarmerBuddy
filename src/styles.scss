@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/themes/dark.scss';
+@import '~@swimlane/ngx-datatable/themes/bootstrap.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+@import '~animate.css/animate.min.css';
+
+html, body { height: 100%;}
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// .view {
+//   background: url("https://mdbootstrap.com/img/Photos/Others/img (40).jpg")no-repeat center center;
+//   background-size: cover;
+//   height: 100vh;
+// }
+
+.navbar {
+  background-color: transparent;
+}
+
+.top-nav-collapse {
+  background-color: #3F51B5;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+      background-color: #3F51B5;
+  }
+}

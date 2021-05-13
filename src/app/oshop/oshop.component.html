@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+<!-- <p>oshop works!</p> -->
+<div class="container">
+  <main [@fadeAnimation]="o.isActivated">
+    <router-outlet #o='outlet'></router-outlet>
+  </main>
+</div>
+<!-- <app-footer class="mt-auto"></app-footer> -->

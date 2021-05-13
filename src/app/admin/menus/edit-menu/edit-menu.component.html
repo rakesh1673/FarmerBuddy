@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Edit</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <input class="form-control" placeholder="Title" [(ngModel)]="data.title">
+  </mat-form-field>&nbsp;
+  <mat-form-field>
+    <input class="form-control" placeholder="URL" [(ngModel)]="data.url">
+  </mat-form-field>&nbsp;
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="btn btn-primary" [mat-dialog-close]="data">Yes</button>&nbsp;
+  <button class="btn btn-danger" mat-dialog-close="false">Cancel</button>
+</mat-dialog-actions>

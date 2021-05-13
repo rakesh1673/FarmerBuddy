@@ -1,0 +1,70 @@
+<!-- <p>menus works!</p> -->
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form #f="ngForm" (ngSubmit)="addMenu()">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Add Menu</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <input type="text" name="title" [(ngModel)]="menuDetails.title" class="form-control validate"
+              placeholder="Title">
+          </div>
+
+          <div class="md-form mb-4">
+            <input type="text" name="url" [(ngModel)]="menuDetails.url" class="form-control validate" placeholder="URL">
+          </div>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-success" type="submit">Add</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="" class="btn btn-info btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm"><i
+      class="fas fa-plus"></i> Add Menu</a>
+</div>
+
+
+<!-- <input type="text"  placeholder="Type to filter the name column..." (keyup)="updateFilter($event)"  /> -->
+
+<ngx-datatable #myFilterTable #myTable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
+  [footerHeight]="50" [rowHeight]="50" [scrollbarV]="false" [limit]="10" [sorts]="[{prop: 'name', dir: 'desc'}]">
+
+  <ngx-datatable-column name="ID">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.id }}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Title">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.title}}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="URL">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.url}}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="actions">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <button type="button" class="btn btn-primary btn-floating px-2 py-1 mr-4"
+        (click)="openEditDialog(row.id, row.title, row.url)"><i class="fas fa-xs fa-pen"></i></button>
+      <button type="button" class="btn btn-danger btn-floating px-2 py-1" (click)="openDialog(row.id)"><i
+          class="fas fa-xs fa-trash"></i></button>
+    </ng-template>
+  </ngx-datatable-column>
+
+</ngx-datatable>

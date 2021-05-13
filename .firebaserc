@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "farmerbuddy-4281d": {
+      "hosting": {
+        "FarmerBuddy": [
+          "farmerbuddy-4281d"
+        ]
+      }
+    }
+  }
+}

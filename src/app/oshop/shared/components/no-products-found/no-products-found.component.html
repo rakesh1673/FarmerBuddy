@@ -1,0 +1,22 @@
+<!-- <p>no-products-found works!</p> -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="error-template">
+      <h1>Oops!</h1>
+      <h2>{{ title }}</h2>
+      <div class="error-details">
+        {{ description }}
+      </div>
+      <div class="error-actions">
+        <a [routerLink]="['/oshop']" class="btn btn-primary btn-lg mb-2">
+          <i class="fas fa-home"></i>
+          Take Me Home
+        </a>
+        <a [routerLink]="['/oshop/products/all-products']" class="btn btn-outline-dark btn-lg">
+          <i class="fas fa-store"></i>
+          Our Products
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

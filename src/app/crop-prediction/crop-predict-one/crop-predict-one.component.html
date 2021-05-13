@@ -1,0 +1,208 @@
+<h2 class="text-center"><strong>Crop Prediction</strong></h2>
+<div class="row">
+  <div class="col-md-6">
+    <form #f="ngForm" (click)="submit(f)">
+      <mat-vertical-stepper #stepper>
+        <mat-step>
+          <ng-template matStepLabel>
+            <h5><strong>Season</strong></h5>
+          </ng-template>
+          <div class="d-flex justify-content-around align-items-center flex-wrap align-content-between">
+            <div class="form-check form-check-inline ">
+              <label>
+                <input type="radio" name="season" ngModel value="kharif" #season="ngModel" required>
+                <i class="fas fa-check"></i>&nbsp;Kharif
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="season" ngModel value="rabi">
+                <i class="fas fa-check"></i>&nbsp;Rabi
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="season" ngModel value="zaid">
+                <i class="fas fa-check"></i>&nbsp;Zaid
+              </label>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button mdbBtn size="sm" type="button" color="indigo" mdbWavesEffect matStepperNext>
+              Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>
+            <h5><strong>Soil Type</strong></h5>
+          </ng-template>
+          <div class="d-flex justify-content-around align-items-center flex-wrap align-content-between">
+            <div class="form-check form-check-inline ">
+              <label>
+                <input type="radio" name="soil" ngModel value="red" #soil="ngModel" required>
+                <i class="fas fa-check"></i>&nbsp;Red Soil
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="soil" ngModel value="black">
+                <i class="fas fa-check"></i>&nbsp;Black Soil
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="soil" ngModel value="alluvial">
+                <i class="fas fa-check"></i>&nbsp;Alluvial Soil
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="soil" ngModel value="loamy">
+                <i class="fas fa-check"></i>&nbsp;Loamy Soil
+              </label>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button mdbBtn size="sm" type="button" color="indigo" mdbWavesEffect matStepperPrevious>
+              Back &nbsp;<i class="fas fa-arrow-left"></i></button>
+            <button mdbBtn size="sm" type="button" color="indigo" mdbWavesEffect matStepperNext>
+              Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>
+            <h5><strong>Water Required</strong></h5>
+          </ng-template>
+          <div class="d-flex justify-content-around align-items-center flex-wrap align-content-between">
+            <div class="form-check form-check-inline ">
+              <label>
+                <input type="radio" name="waterRequired" ngModel #waterRequired="ngModel" value="normal" required>
+                <i class="fas fa-check"></i>&nbsp;Normal
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="waterRequired" ngModel value="medium">
+                <i class="fas fa-check"></i>&nbsp;Medium
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="waterRequired" ngModel value="high">
+                <i class="fas fa-check"></i>&nbsp;High
+              </label>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button mdbBtn size="sm" type="button" color="indigo" mdbWavesEffect matStepperPrevious>
+              Back &nbsp;<i class="fas fa-arrow-left"></i></button>
+            <button mdbBtn size="sm" type="button" color="indigo" mdbWavesEffect matStepperNext>
+              Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>
+            <h5><strong>Temperature</strong></h5>
+          </ng-template>
+          <div class="d-flex justify-content-around align-items-center flex-wrap align-content-between">
+            <div class="form-check form-check-inline ">
+              <label>
+                <input type="radio" name="temperature" ngModel #temperature="ngModel" value="humid" required>
+                <i class="fas fa-check"></i>&nbsp;Humid
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="temperature" ngModel value="subhumid">
+                <i class="fas fa-check"></i>&nbsp;Sub Humid
+              </label>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button mdbBtn size="sm" type="button" color="indigo" mdbWavesEffect matStepperPrevious>
+              Back &nbsp;<i class="fas fa-arrow-left"></i></button>
+            <button mdbBtn size="sm" type="button" color="indigo" mdbWavesEffect matStepperNext>
+              Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>
+            <h5><strong>Average Days Required</strong></h5>
+          </ng-template>
+          <div class="d-flex justify-content-around align-items-center flex-wrap align-content-between">
+            <div class="form-check form-check-inline ">
+              <label>
+                <input type="radio" name="avgDays" ngModel value="4m" #avgDays="ngModel" required>
+                <i class="fas fa-check"></i>&nbsp;Below 130 days
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="avgDays" ngModel value="6m">
+                <i class="fas fa-check"></i>&nbsp;130-180 days
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="avgDays" ngModel value="12m">
+                <i class="fas fa-check"></i>&nbsp;180-365 days
+              </label>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button mdbBtn size="sm" type="button" color="indigo" mdbWavesEffect matStepperPrevious>
+              Back &nbsp;<i class="fas fa-arrow-left"></i></button>
+            <button mdbBtn size="sm" type="button" color="danger" (click)="stepper.reset()" (click)="f.reset()"
+              mdbWavesEffect matStepperNext>
+              Reset &nbsp;<i class="fas fa-redo-alt"></i></button>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+      <div class="d-flex justify-content-center">
+        <button mdbBtn type="submit" size="lg" color="dark-green" mdbWavesEffect>Predict</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-4">
+    <!-- Card -->
+    <mdb-card>
+      <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+        <!-- Card img -->
+        <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+        </mdb-card-img>
+        <a>
+          <div class="mask"></div>
+        </a>
+      </div>
+      <!--Card content-->
+      <mdb-card-body>
+        <!--Title-->
+        <mdb-card-title>
+          <h4 *ngIf="f.valid">{{ crop }}</h4>
+        </mdb-card-title>
+
+        <!--Text-->
+        <mdb-card-text>
+          <h5>Season : <strong>{{ season.value }}</strong></h5>
+          <h5>Soil : <strong>{{ soil.value }}</strong></h5>
+          <h5>Water Required: <strong>{{ waterRequired.value }}</strong></h5>
+          <h5>Temperature : <strong>{{ temperature.value }}</strong></h5>
+          <h5>Avg. Days : <strong>{{ avgDays.value }}</strong></h5>
+        </mdb-card-text>
+
+        <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+      </mdb-card-body>
+    </mdb-card>
+    <!-- Card -->
+
+    <p>{{crop}}</p>
+
+    <p>{{ f.value | json}}</p>
+  </div>
+  <div class="col-md-2"></div>
+</div>

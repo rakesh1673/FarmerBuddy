@@ -1,0 +1,21 @@
+<!-- <p>tips-news works!</p> -->
+<app-tips-navbar></app-tips-navbar>
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link *ngFor="let menu of menuList" routerLink="/tips/pages/{{menu.url}}">
+    {{menu.title}}
+  </a>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+<!-- <mat-tab-group dynamicHeight>
+  <mat-tab label="{{ menu.title }}" routerLink="/tips/pages/{{menu.url}}" *ngFor="let menu of menuList">
+    <router-outlet></router-outlet>
+  </mat-tab>
+</mat-tab-group> -->
+
+<!-- <div *ngFor="let menu of menuList">
+  <a routerLink="/tips/pages/{{menu.url}}">{{menu.title}}</a>
+</div> -->
