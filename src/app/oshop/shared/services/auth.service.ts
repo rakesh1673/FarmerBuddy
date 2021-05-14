@@ -31,7 +31,7 @@ export class AuthService {
   );
 
   isAdmin$: Observable<boolean> = this.user$.pipe(
-    map((user) => !!user.isAdmin)
+    map((user) => !user.isAdmin)
   );
 
   constructor(

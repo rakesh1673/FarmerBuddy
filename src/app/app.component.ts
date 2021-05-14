@@ -21,12 +21,15 @@ export class AppComponent {
   title = 'FarmerBuddy';
 
   constructor(public  translate: TranslateService) {
-    translate.addLangs(['en', 'te', 'hin']);
+    translate.addLangs(['en', 'te', 'hin', 'ta']);
     translate.setDefaultLang('en');
 
     const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|te|hin/) ? browserLang : 'en');
+    translate.use(browserLang.match(/en|te|hin|ta/) ? browserLang : 'en');
   }
 
+  switchLang(lang: string) {
+    this.translate.use(lang);
+  }
 
 }

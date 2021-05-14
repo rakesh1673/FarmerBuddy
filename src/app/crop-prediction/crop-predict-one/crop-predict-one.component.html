@@ -171,19 +171,18 @@
   <div class="col-md-4">
     <!-- Card -->
     <mdb-card>
-      <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-        <!-- Card img -->
+      <!-- <div class="view rgba-white-slight waves-light" mdbWavesEffect>
         <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
         </mdb-card-img>
         <a>
           <div class="mask"></div>
         </a>
-      </div>
+      </div> -->
       <!--Card content-->
       <mdb-card-body>
         <!--Title-->
         <mdb-card-title>
-          <h4 *ngIf="f.valid">{{ crop }}</h4>
+          <h2 *ngIf="f.valid">{{ crop }}</h2>
         </mdb-card-title>
 
         <!--Text-->
@@ -195,14 +194,9 @@
           <h5>Avg. Days : <strong>{{ avgDays.value }}</strong></h5>
         </mdb-card-text>
 
-        <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
       </mdb-card-body>
     </mdb-card>
     <!-- Card -->
-
-    <p>{{crop}}</p>
-
-    <p>{{ f.value | json}}</p>
   </div>
   <div class="col-md-2"></div>
 </div>

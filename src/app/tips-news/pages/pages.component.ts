@@ -32,7 +32,7 @@ export class PagesComponent implements OnInit {
   ngOnInit(): void {
     this.menus.getMenus().subscribe(menus => {
       this.menuList = menus;
-    })
+    });
   }
 
 }

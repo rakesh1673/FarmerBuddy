@@ -21,7 +21,9 @@ export class ProductListComponent implements OnInit {
     public authService: AuthService,
     private productService: ProductService,
     private toastrService: ToastrService
-  ) { }
+  ) {
+    console.log(authService.isAdmin$)
+  }
 
   ngOnInit(): void {
     this.getAllProducts();

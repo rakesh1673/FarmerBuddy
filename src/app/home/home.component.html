@@ -28,7 +28,7 @@
             <option value="hin">Hindi</option>
           </select>
         </li> -->
-        <!-- <li class="nav-item dropdown" mdbDropdown>
+        <li class="nav-item dropdown" mdbDropdown>
           <a mdbDropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
             <i class="fa fa-globe"> </i><span class="caret"></span></a>
           <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
@@ -37,10 +37,10 @@
               <i class="fa fa-flag-o mr-2"></i>
               {{ lang.language }} ({{ lang.langCode }})</a>
           </div>
-        </li> -->
+        </li>
         <li class="nav-item" *ngIf="authService.isLoggedOut$ | async">
           <a class="nav-link" [routerLink]="['./login']">
-            <i class="fas fa-lg fa-user-circle mr-2"> Sign in</i>
+            <i class="fas fa-lg fa-user-circle mr-2"> {{'SIGN_IN' | translate }}</i>
           </a>
         </li>
         <li class="nav-item" *ngIf="authService.isLoggedIn$ | async">
@@ -51,7 +51,6 @@
                 <a class="dropdown-item" routerLink='/oshop/users'>
                   <i class="fa fa-user mr-1"> My Account</i>
                 </a>
-                <a class="dropdown-item" href="#">My Account</a>
                 <div class="divider dropdown-divider"></div>
                 <a class="dropdown-item" (click)="logout()">logout</a>
               </div>
@@ -62,79 +61,11 @@
     </links>
   </mdb-navbar>
 
-  <!--Intro Section-->
-  <!-- <section class="view intro-2">
-    <div class="full-bg-img mask rgba-gradient">
-      <div class="container flex-center">
-        <div class="d-flex align-items-center content-height w-100">
-          <div class="row flex-center pt-5 mt-3 w-100">
-            <div class="col-md-6 text-center text-md-left mb-5">
-              <div class="white-text">
-                <h2 class="h1 h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s">Sign up right
-                  now! </h2>
-                <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-                <h6 class="wow fadeInLeft" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur
-                  adipisicing
-                  elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat!
-                  Commodi sequi
-                  non animi ea dolor molestiae, quisquam iste, maiores. Nulla.</h6>
-                <br>
-                <a mdbBtn color="white" outline="true" class="wow fadeInLeft waves-light" data-wow-delay="0.3s"
-                  mdbWavesEffect>Learn more</a>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-xl-5 offset-xl-1">
-              <div class="container">
-                <div class="row icon-main mt-5">
-                  <div class="col-md-2 offset-md-2 icon-box coffee text-center rounded-circle">
-                    <i class="fa fa-coffee mt-5 icon-coffee" aria-hidden="true"></i>
-                    <h6 class="mt-3 font-weight-bold">Coffee</h6>
-                  </div>
-                  <div class="col-md-2 offset-md-1 icon-box setting text-center rounded-circle">
-                    <i class="fa fa-cog mt-5 icon-setting" aria-hidden="true"></i>
-                    <h6 class="mt-3 font-weight-bold">Setting</h6>
-                  </div>
-                  <div class="col-md-2 offset-md-1 icon-box upload text-center rounded-circle">
-                    <i class="fa fa-upload mt-5 icon-upload" aria-hidden="true"></i>
-                    <h6 class="mt-3 font-weight-bold">Upload</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- <section class="view intro-2">
-    <div class="full-bg-img mask rgba-gradient">
-      <div class="container">
-        <div class="row d-flex justify-content-around icon-main mt-5">
-          <div class="col-md-2 offset-md-1 icon-box coffee text-center rounded-circle" hover-class='animate-upload'
-            hover-class="change-color">
-            <i class="fa fa-coffee mt-5 icon-coffee" aria-hidden="true"></i>
-            <h6 class="mt-3 font-weight-bold">Coffee</h6>
-          </div>
-          <div class="col-md-2 offset-md-1 icon-box setting text-center rounded-circle">
-            <i class="fa fa-cog mt-5 icon-setting" aria-hidden="true"></i>
-            <h6 class="mt-3 font-weight-bold">Setting</h6>
-          </div>
-          <div class="col-md-2 offset-md-1 icon-box upload text-center rounded-circle">
-            <i class="fa fa-upload mt-5 icon-upload" aria-hidden="true"></i>
-            <h6 class="mt-3 font-weight-bold">Upload</h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</header> -->
 
   <div class="view intro jarallax"
     style="background: url(../../assets/img/green.jpg) no-repeat center center fixed; background-size: cover; height: 1200px;">
     <div class="full-bg-img mask">
-      <h1 style="color: white; text-align: center" class="mt-5 h1">Farmer Buddy</h1>
+      <h1 style="color: white; text-align: center" [@bounce]="bounce" class=" h1">Farmer Buddy</h1>
 
       <div class=" container d-flex justify-content-center">
         <div class="row mt-3">
@@ -142,38 +73,30 @@
             <div class="intro-info-content text-center">
               <div class="container mt-5">
                 <div class="row">
-                  <a class="mr-5" routerLink="/crop-prediction">
+                  <a class="mr-5" [@bounceInLeft]="bounceInLeft" routerLink="/crop-prediction">
                     <div class="card text-center text-white">
                       <div class="card-body d-flex justify-content-center align-items-center">
-                        <h5 class="card-title"><strong>Crop Analysis</strong></h5>
+                        <h5 class="card-title"><strong>{{'CROP_ANALYIS' | translate}}</strong></h5>
                       </div>
                     </div>
                   </a>
 
-                  <a routerLink="/oshop">
+                  <a routerLink="/oshop" [@bounceInRight]="bounceInRight">
                     <div class="card text-center text-white">
                       <div class="card-body d-flex justify-content-center align-items-center">
-                        <h5 class="card-title"><strong>Organic Products</strong></h5>
+                        <h5 class="card-title"><strong>{{'ORGANIC_PRODUCTS' | translate}}</strong></h5>
                       </div>
                     </div>
                   </a>
                 </div>
               </div>
 
-              <div class="container mt-5">
+              <div class="container mt-5 d-flex justify-content-center">
                 <div class="row">
-                  <a class="mr-5" routerLink="/">
+                  <a class="mr-5" [@bounceInLeft]="bounceInLeft" routerLink="/news-tips">
                     <div class="card text-center text-white">
                       <div class="card-body d-flex justify-content-center align-items-center">
-                        <h5 class="card-title"><strong>Tips & Tricks</strong></h5>
-                      </div>
-                    </div>
-                  </a>
-
-                  <a routerLink="/tips">
-                    <div class="card text-center text-white">
-                      <div class="card-body d-flex justify-content-center align-items-center">
-                        <h5 class="card-title"><strong>New Feed</strong></h5>
+                        <h5 class="card-title"><strong>{{'NEWS_&_TIPS' | translate}}</strong></h5>
                       </div>
                     </div>
                   </a>
@@ -191,23 +114,8 @@
     <div class="row">
       <!--Grid column-->
       <div class="col-md-12 text-center mb-5">
-        <h2 class="h1 font-bold light-blue-text my-5">Farming.</h2>
-        <p align="justify">Farming is growing crops or keeping animals by people for food and raw materials. Farming is
-          a part of agriculture.
-
-          Agriculture started thousands of years ago, but no one knows for sure how old it is.
-          The development of farming gave rise to the Neolithic Revolution whereby people gave up nomadic hunting and
-          became settlers
-          in what became cities.
-          Agriculture and domestication probably started in the Fertile Crescent (the Nile Valley, The Levant and
-          Mesopotamia).
-          The area called Fertile Crescent is now in the countries of Iraq, Syria, Turkey, Jordan, Lebanon, Israel, and
-          Egypt.
-          Wheat and barley are some of the first crops people grew. People probably started agriculture slowly by
-          planting a few crops,
-          but still gathered many foods from the wild. People may have started farming because the weather and soil
-          began to change. Farming
-          can feed many more people than hunter-gatherers can feed on the same amount of land.</p>
+        <h2 class="h1 font-bold light-blue-text my-5">{{'FARMING' |  translate}}</h2>
+        <p align="justify">{{'FARMING_DESC' | translate }}</p>
       </div>
       <!--Grid column-->
     </div>
@@ -261,15 +169,10 @@
           <div class="row mt-5">
             <div class="col-md-12 wow fadeIn mb-3">
               <div class="intro-info-content text-center">
-                <h1 class="h1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">About FarmerBuddy</h1>
+                <h1 class="h1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">
+                  {{'ABOUT_FARMER_BUDDY' | translate }}</h1>
                 <h4 class="mb-3 mt-1 white-text font-bold wow fadeIn" data-wow-delay="0.4s">
-                  Farmer crop guide is a web application with developed by using html, css, java script, angular .This
-                  application runs with the algorithm that will analyse the type of soil, water availablity, fertility,
-                  last crop grown and gives the best crop to harvest and also helps in sharing the new techniques to
-                  grow the crops well. This application will also have the organic store. this project, we provide
-                  various information required for farmers, agricultural students and also providing solutions to them
-                  about queries posted by them. This makes agriculture more eco-friendly and this portal is very useful
-                  to farmers and agricultural students
+                  {{'ABOUT_FARMER_BUDDY_DESC' | translate }}
                 </h4>
               </div>
             </div>
@@ -279,46 +182,11 @@
     </div>
   </div>
 
-  <div class="container">
-    <!--Grid row-->
+  <!-- <div class="container">
     <div class="row">
-      <!--Grid column-->
       <div class="col-md-12 text-center my-5">
         <h2 class="h1 font-bold pink-text mb-5">Lorem ipsum dolor sit amet, consectetur quis elit.</h2>
-        <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque
-          provident
-          rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis
-          cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-          cumque
-          provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
-          veritatis
-          cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-          cumque
-          provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
-          veritatis
-          cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-          cumque
-          provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
-          veritatis
-          cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-          cumque
-          provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
-          veritatis
-          cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-          cumque
-          provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
-          veritatis
-          cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-          cumque
-          provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
-          veritatis
-          cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-          cumque
-          provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
-          veritatis
-          cupiditate reprehenderit.</p>
+        <p align="justify"></p>
       </div>
-      <!--Grid column-->
     </div>
-    <!--Grid row-->
-  </div>
+  </div> -->

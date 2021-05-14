@@ -1,3 +1,4 @@
+import { SafePipe } from './safe.pipe';
 import { NgxYazuoSidenavModule } from 'ngx-yazuo-sidenav';
 import { PagesListComponent } from './pages-list/pages-list.component';
 import { PagesComponent } from './pages/pages.component';
@@ -22,7 +23,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     TipsNavbarComponent,
     PagesComponent,
     PagesListComponent,
-    TipsHomeComponent
+    TipsHomeComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     AngularFirestoreModule,
     MDBBootstrapModule.forRoot(),
     NgxYazuoSidenavModule.forRoot(),
-    MatTabsModule
+    MatTabsModule,
   ],
   exports: [
     TipsNavbarComponent

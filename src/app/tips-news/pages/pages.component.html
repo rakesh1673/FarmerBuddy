@@ -2,7 +2,9 @@
   <div class="card-columns">
     <mdb-card *ngFor="let post of postList">
       <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-        <iframe *ngIf="post.videoLink" class="embed-responsive-item" [src]="'post.videoLink'" allowfullscreen></iframe>
+        <div *ngIf="post.videoLink" class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" [src]="post.videoLink | safe" allowfullscreen></iframe>
+        </div>
         <mdb-card-img *ngIf="post.imgLink" src="{{post.imgLink}}" class="card-img-top">
         </mdb-card-img>
       </div>

@@ -1,3 +1,12 @@
 {
-  "HELLO": "hello {{value}}"
+  "CROP_ANALYIS": "Crop Analysis",
+  "ORGANIC_PRODUCTS": "Organic Products",
+  "NEWS_&_TIPS": "News & Tips",
+  "NEWS_FEED": "News Feed",
+  "SIGN_IN": "Sign in",
+  "FARMING": "Farming",
+  "FARMING_DESC": "Farming is growing crops or keeping animals by people for food and raw materials. Farming is a part of agriculture. Agriculture started thousands of years ago, but no one knows for sure how old it is. The development of farming gave rise to the Neolithic Revolution whereby people gave up nomadic hunting and became settlers in what became cities. Agriculture and domestication probably started in the Fertile Crescent (the Nile Valley, The Levant and Mesopotamia). The area called Fertile Crescent is now in the countries of Iraq, Syria, Turkey, Jordan, Lebanon, Israel, and Egypt. Wheat and barley are some of the first crops people grew. People probably started agriculture slowly by planting a few crops, but still gathered many foods from the wild. People may have started farming because the weather and soil began to change. Farming can feed many more people than hunter-gatherers can feed on the same amount of land.",
+  "ABOUT_FARMER_BUDDY": "About Farming Buddy",
+  "ABOUT_FARMER_BUDDY_DESC": "Farmer crop guide is a web application with developed by using html, css, java script, angular .This application runs with the algorithm that will analyse the type of soil, water availablity, fertility, last crop grown and gives the best crop to harvest and also helps in sharing the new techniques to grow the crops well. This application will also have the organic store. this project, we provide various information required for farmers, agricultural students and also providing solutions to them about queries posted by them. This makes agriculture more eco-friendly and this portal is very useful to farmers and agricultural students"
+
 }

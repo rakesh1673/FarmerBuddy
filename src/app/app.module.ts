@@ -1,3 +1,4 @@
+import { SharedModule } from './oshop/shared/shared.module';
 import { environment } from './../environments/environment';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
@@ -21,7 +22,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HoverClassDirective } from './home/hover-class.directive';
 
-export function HttpLoaderFactory(http: HttpClient) {
+export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
@@ -43,18 +44,18 @@ export function HttpLoaderFactory(http: HttpClient) {
     OwlModule,
     NgxYazuoSidenavModule.forRoot(),
     NgxDatatableModule,
+    SharedModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
+        useFactory: httpLoaderFactory,
         deps: [HttpClient]
       },
       isolate: true
     })
   ],
   providers: [
-
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
